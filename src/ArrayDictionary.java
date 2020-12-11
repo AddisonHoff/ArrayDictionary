@@ -1,3 +1,8 @@
+/*
+Addison Hoff
+12/11/20
+This is a dictionary data structure composed of arraylists.
+ */
 import java.util.*;
 
 public class ArrayDictionary<E, T> {
@@ -34,5 +39,25 @@ public class ArrayDictionary<E, T> {
         return temp;
     }
 
+    boolean contains(E key) {
+        return this.key.contains(key);
+    }
 
+    boolean isEmpty() {
+        return size <= 0;
+    }
+
+    int size() {
+        return size;
+    }
+
+    Collection<E> Keys() {
+        Collection<E> temp = key;
+        return temp;
+    }
+
+    Collection<T> Values() {
+        Collection<T> temp = value;
+        return temp;
+    }
 }
