@@ -1,3 +1,8 @@
+/*
+Addison Hoff
+12/11/20
+This is a dictionary data structure composed of arraylists.
+ */
 import java.util.*;
 
 public class ArrayDictionary<E, T> {
