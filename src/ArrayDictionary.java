@@ -1,45 +1,58 @@
-public class ArrayDictionary {
-    /*  A Java dictionary should use generics for the
-     *  types of both key and value. E and T here.
-     */
+import java.util.*;
 
-    //add an key-value pair to the dictionary
+public class ArrayDictionary<E, T> {
+    private ArrayList<E> key;
+    private ArrayList<T> value;
+    private int size;
+
+    public ArrayDictionary() {
+
+        key = new ArrayList<E>();
+        value = new ArrayList<T>();
+        size = 0;
+
+    }
+
     void put(E key, T value) {
 
+        this.key.add(key);
+        this.value.add(value);
+        size++;
     }
 
-    //get the value associated with a given key
     T get(E key) {
-
+        return value.get(this.key.indexOf(key));
     }
 
-    //remove a key-value pair and return its value
     T remove(E key) {
 
+        T temp = value.get(this.key.indexOf(key));
+        value.remove(this.key.indexOf(key));
+        this.key.remove(key);
+
+        size--;
+        return temp;
     }
 
-    //returns true if the given key has an associated value
     boolean contains(E key) {
-
+        return this.key.contains(key);
     }
 
-    //returns true if the dictionary is empty
     boolean isEmpty() {
-
+        return size <= 0;
     }
 
-    //returns the number of key-value pairs in the dictionary
     int size() {
-
+        return size;
     }
 
-    //returns a Collection¹ of keys
-    Collection<E> keys() {
-
+    Collection<E> Keys() {
+        Collection<E> temp = key;
+        return temp;
     }
 
-    //returns a Collection of values
-    Collection<T>  values() {
-
+    Collection<T> Values() {
+        Collection<T> temp = value;
+        return temp;
     }
 }
